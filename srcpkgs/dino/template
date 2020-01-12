@@ -1,0 +1,20 @@
+# Template file for 'dino'
+pkgname=dino
+version=1.0
+revision=1
+build_style=gnu-configure
+hostmakedepends="gettext pkg-config which git vala cmake unzip"
+makedepends="libgee-devel gtk+3-devel libgcrypt-devel qrencode-devel libsoup-devel gpgme-devel"
+depends="python3-httplib2"
+short_desc="Modern xmpp client"
+wrksrc="dino-master"
+maintainer="silvernode <silvernode@gmail.com>"
+license="GPL-3.0-only"
+homepage="https://dino.im"
+distfiles="https://github.com/${pkgname}/${pkgname}/archive/master.zip"
+checksum=1553c17d7c83cdf65323062f5bbd88f6ffc71d2e8947053a4cf786e1f581e7fa
+
+post_install() {
+	vlicense LICENSE
+}
+
